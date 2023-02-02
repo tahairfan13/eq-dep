@@ -15,13 +15,9 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'sqlite3'
 # Use sqlite3 as the database for Active Record
-group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -58,6 +54,11 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'capistrano-rake', require: false
 end
 
 group :test do
