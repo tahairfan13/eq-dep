@@ -53,7 +53,7 @@ class ResumesController < ApplicationController
       exp_ind = ind if str.tr("\n","").start_with?('EXPERIENCE', 'experience')
     end
 
-    resume = Resume.create(full_name: data_arr[0].strip, address: address.first, email: email.reject(&:nil?).first, phone_number: phone_num, weblinks: links.join(','), created_at: DateTime.current, user_id: current_user.id, role_id: role, raw_data: data)
+     Resume.create(full_name: data_arr[0]&.strip, address: address.first, email: email.reject(&:nil?).first, phone_number: phone_num, weblinks: links.join(','), created_at: DateTime.current, user_id: current_user.id, role_id: role, raw_data: data)
 
     # s.scan(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i).first  for email
     # s.gsub(/[^0-9]/, '') for contact number
